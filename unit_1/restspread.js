@@ -28,26 +28,26 @@ console.log(add2(1,54,3,56,555));
 
 
 //       2nd use
-/*
-let a=[1,2,3333,43,543,32];
-let[first,sec,last]=a; //will print 1,2,3333
-console.log(first,sec,last);*/
+
+// let a=[1,2,3333,43,543,32];
+// let[first,sec,last]=a; //will print 1,2,3333
+// console.log(first,sec,last);
 
 //
-// let aa=[1,2,3333,43,543,32];
-// let[first,sec,...last]=aa;
-// console.log(first,sec,...last);
+let aa=[1,2,3333,43,543,32];
+let[first,sec,...last]=aa;
+console.log(first,sec,...last);//all printed
 
 //spread---expands an array or object into individual objects
-// let arr1=[10,20,30];
-// let arr2=[...arr];
-// console.log(ar2);
+let arr1=[10,20,30];
+let arr2=[...arr1];
+console.log(arr2);
 
-// function test(...args){
-//     console.log(args);
-// }
-// let arr=[1,2,3];
-// test(...arr);
+function test(...args){
+    console.log(args);
+}
+let arr=[1,2,3];
+test(...arr);
 
 
 

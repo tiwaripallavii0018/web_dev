@@ -1,49 +1,42 @@
-function placeOrder(Iteam, delay) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(Iteam); 
-    }, delay);
-  });
-}
-function assignOrder(orderId, delay) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(orderId); 
-    }, delay);
-  });
-}
-function pickupOrder(riderId, delay) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(riderId); 
-    }, delay);
-  });
-}
-function deliverOrder(orderId, delay) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(orderId); 
-    }, delay);
+function placeOrder(orderId, delay) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(orderId), delay);
   });
 }
 
+function assignOrder(orderId, delay) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(orderId), delay);
+  });
+}
+
+function pickupOrder(orderId, delay) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(orderId), delay);
+  });
+}
+
+function deliverOrder(orderId, delay) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(orderId), delay);
+  });
+}
 
 placeOrder(12212, 1000)
-  .then(() => {
-    console.log("Order Confirmed");
-    return assignOrder(12213, 2000);
+  .then((orderId) => {
+    console.log(`Order ${orderId} Confirmed`);
+    return assignOrder(orderId, 2000);
   })
-  .then(() => {
-    console.log("Rider assigned");
-    return pickupOrder(12214, 2000);
+  .then((orderId) => {
+    console.log(`Order ${orderId} Rider assigned`);
+    return pickupOrder(orderId, 2000);
   })
-  .then(() => {
-    console.log("On the Way");
-    return deliverOrder(12215, 2000);
+  .then((orderId) => {
+    console.log(`Order ${orderId} On the Way`);
+    return deliverOrder(orderId, 2000);
   })
-  .then(()=>{
-    console.log("Delivered");
-    return Order(12512,3000);
+  .then((orderId) => {
+    console.log(`Order ${orderId} Delivered`);
   })
   .catch((err) => {
     console.log("Error:", err);
@@ -51,6 +44,30 @@ placeOrder(12212, 1000)
   .finally(() => {
     console.log("All Done");
   });
+
+// placeOrder(12212, 1000)
+//   .then(() => {
+//     console.log("Order Confirmed");
+//     return assignOrder(12213, 2000);
+//   })
+//   .then(() => {
+//     console.log("Rider assigned");
+//     return pickupOrder(12214, 2000);
+//   })
+//   .then(() => {
+//     console.log("On the Way");
+//     return deliverOrder(12213, 2000);
+//   })
+//   .then(()=>{
+//     console.log("Delivered");
+//     //return Order(12512,3000);
+//   })
+//   .catch((err) => {
+//     console.log("Error:", err);
+//   })
+//   .finally(() => {
+//     console.log("All Done");
+ // });
 
 
 
