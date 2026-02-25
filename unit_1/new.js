@@ -1,8 +1,8 @@
-//****(``)--backtick    [ttemporal literals]
-// const aa=()=>{return {user:"name"}} //or ({user :"name"}) 
-// console.log(aa());
-// const bb=()=>[1,2,3,4,5,6];
-// console.log(bb());
+//****(``)--backtick    [temporal literals]
+const aa=()=>{return {user:"name"}} //or ({user :"name"}) 
+console.log(aa());
+const bb=()=>[1,2,3,4,5,6];
+console.log(bb());
 
 const user={
     name:"aj",age: 22,

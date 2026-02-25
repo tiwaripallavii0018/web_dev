@@ -23,7 +23,7 @@ function hello(){
 }
 hello();
 
-console.log(z);// no error
+console.log(z);// no error....will show undefined
 var z=20;
 
 //array elementd cannot be modified but ,the array itself cannot be reassigned

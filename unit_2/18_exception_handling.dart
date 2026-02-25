@@ -1,4 +1,4 @@
-
+import 'dart:io';
 // OBJECTIVE: Exception Handling
 // 1. ON Clause
 // 2. Catch Clause with Exception Object
@@ -52,7 +52,7 @@ void main() {
 	try {
 		depositMoney(-200);
 	} catch (e) {
-		print(e.errorMessage());
+		print(e);
 	} finally {
 		// Code
 	}
@@ -62,6 +62,10 @@ class DepositException implements Exception {
 	String errorMessage() {
 		return "You cannot enter amount less than 0";
 	}
+  @override
+  String toString(){
+    return errorMessage();
+  }
 }
 
 void depositMoney(int amount) {
