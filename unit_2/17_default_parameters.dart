@@ -12,8 +12,7 @@ void main() {
 	findVolume(10, height: 30, breadth: 5);     // Making use of Named Parameters with Default values
 }
 
-
-int findVolume(int length, {int breadth = 2, int height = 20}) {
+void findVolume(int length, {int breadth = 2, int height = 20}) {
 
 	print("Lenght is $length");
 	print("Breadth is $breadth");

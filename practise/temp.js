@@ -109,7 +109,7 @@ function updateObject(obj, newKey, newValue) {
   // STUDENT CODE STARTS HERE
 let newObj={...obj};
 newObj[newKey]=newValue;
-return newValue;
+return newObj;
 
   // STUDENT CODE ENDS HERE
 }
@@ -163,7 +163,7 @@ function extractElements(arr) {
   // STUDENT CODE STARTS HERE
 let[first]=arr;
 let last=arr[arr.length-1];
-if(Array.length==1){
+if(arr.length==1){
   last=first;
 }
 return{first,last};
@@ -196,7 +196,7 @@ formatStudent({name:"Aarav", course:"B.Tech"})
 function formatStudent(obj) {
   // STUDENT CODE STARTS HERE
 let{name,course}=obj;
-return 'Student ${name} is enrolled in ${course}';
+return `Student ${name} is enrolled in ${course}`;
 
   // STUDENT CODE ENDS HERE
 }

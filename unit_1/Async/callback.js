@@ -77,14 +77,22 @@ roll(121212, 2000, () => {
 //  and flutterteam, The function
 //showMenu() prints both teams and then print a merged list using the spread operator.
 //The function display(team type , option ) uses switch statement to print a team based on the value o fteam type
-const team=(...uiteam,...flutter)=>{
+const team = (uiteam, flutter) => {
+    console.log("UI Team:");
+    for(let i = 0; i < uiteam.length; i++){
+        console.log(uiteam[i]);
+    }
 
-for(let i=0;i<uiteam.length;i++){
-    console.log(uiteama[i]);
-}
-for(let i=0;i<flutter.length;i++){
-    console.log(flutter[i]);
+    console.log("Flutter Team:");
+    for(let i = 0; i < flutter.length; i++){
+        console.log(flutter[i]);
+    }
+
+    console.log("Merged Team:");
+    let merged = [...uiteam, ...flutter];
+    console.log(merged);
 }
 
+// Example call
+team(["Aarav","Riya"], ["Pallavi","Chavi"]);
  
-}
