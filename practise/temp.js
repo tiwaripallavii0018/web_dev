@@ -49,8 +49,11 @@ sumNumbers(10, 20) → 30
 
 function sumNumbers(...nums) {
   // STUDENT CODE STARTS HERE
-
-
+let sum=0;
+for(let i=0;i<nums.length;i++){
+  sum+=nums[i];
+}
+return sum;
   // STUDENT CODE ENDS HERE
 }
 
@@ -76,8 +79,8 @@ mergeArrays([], [5]) → [5]
 
 function mergeArrays(arr1, arr2) {
   // STUDENT CODE STARTS HERE
-
-
+let numArr=[...arr1,...arr2];
+return numArr;
   // STUDENT CODE ENDS HERE
 }
 
@@ -104,7 +107,9 @@ updateObject({}, "x", 10) → {x:10}
 
 function updateObject(obj, newKey, newValue) {
   // STUDENT CODE STARTS HERE
-
+let newObj={...obj};
+newObj[newKey]=newValue;
+return newValue;
 
   // STUDENT CODE ENDS HERE
 }
@@ -130,7 +135,7 @@ findMax([10,2]) → 10
 
 function findMax(arr) {
   // STUDENT CODE STARTS HERE
-
+return Math.max(...arr);
 
   // STUDENT CODE ENDS HERE
 }
@@ -156,7 +161,12 @@ extractElements([5]) → {first:5, last:5}
 
 function extractElements(arr) {
   // STUDENT CODE STARTS HERE
-
+let[first]=arr;
+let last=arr[arr.length-1];
+if(Array.length==1){
+  last=first;
+}
+return{first,last};
 
   // STUDENT CODE ENDS HERE
 }
@@ -185,7 +195,8 @@ formatStudent({name:"Aarav", course:"B.Tech"})
 
 function formatStudent(obj) {
   // STUDENT CODE STARTS HERE
-
+let{name,course}=obj;
+return 'Student ${name} is enrolled in ${course}';
 
   // STUDENT CODE ENDS HERE
 }
@@ -212,7 +223,7 @@ addDefault(10, 5) → 15
 
 function addDefault(a = 5, b = 10) {
   // STUDENT CODE STARTS HERE
-
+return a+b;
 
   // STUDENT CODE ENDS HERE
 }
@@ -239,7 +250,11 @@ createSuccessPromise("Done")
 
 function createSuccessPromise(message) {
   // STUDENT CODE STARTS HERE
-
+return new Promise(function(resolve,reject){
+  setTimeout(function(){
+    resolve(message);
+  },2000);
+});
 
   // STUDENT CODE ENDS HERE
 }
@@ -265,7 +280,13 @@ createConditionalPromise(false) → Reject
 
 function createConditionalPromise(condition) {
   // STUDENT CODE STARTS HERE
-
+return new Promise(function(resolve,reject){
+  if(condition){
+    resolve("Success");
+  }else{
+    reject("Failed");
+  }
+});
 
   // STUDENT CODE ENDS HERE
 }
@@ -294,7 +315,12 @@ handlePromise(createConditionalPromise(false))
 
 function handlePromise(promise) {
   // STUDENT CODE STARTS HERE
-
+promise.then(function(result){
+  console.log(result);
+})
+.catch(function(error){
+  console.log(error);
+});
 
   // STUDENT CODE ENDS HERE
 }
