@@ -250,12 +250,9 @@ createSuccessPromise("Done")
 
 function createSuccessPromise(message) {
   // STUDENT CODE STARTS HERE
-return new Promise(function(resolve,reject){
-  setTimeout(function(){
-    resolve(message);
-  },2000);
+return new Promise((resolve,reject)=>{
+  setTimeout(function(){resolve(message);},2000);
 });
-
   // STUDENT CODE ENDS HERE
 }
 
@@ -280,7 +277,7 @@ createConditionalPromise(false) → Reject
 
 function createConditionalPromise(condition) {
   // STUDENT CODE STARTS HERE
-return new Promise(function(resolve,reject){
+return new Promise((resolve,reject)=>{
   if(condition){
     resolve("Success");
   }else{
@@ -315,13 +312,12 @@ handlePromise(createConditionalPromise(false))
 
 function handlePromise(promise) {
   // STUDENT CODE STARTS HERE
-promise.then(function(result){
+promise.then((result)=>{
   console.log(result);
 })
-.catch(function(error){
+.catch((error)=>{
   console.log(error);
 });
-
   // STUDENT CODE ENDS HERE
 }
 

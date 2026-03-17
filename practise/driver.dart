@@ -293,13 +293,13 @@ Base Test Case:
 fetchData("Hello") → Completes with "Hello"
 */
 
-Future<String> fetchData(String message) {
-  // STUDENT CODE STARTS HERE
-return Future.delayed(Duration(seconds:2),(){
-  return message;},);
+// Future<String> fetchData(String message) {
+//   // STUDENT CODE STARTS HERE
+// return Future.delayed(Duration(seconds:2),(){
+//   return message;},);
 
-  // STUDENT CODE ENDS HERE
-}
+//   // STUDENT CODE ENDS HERE
+// }
 
 /*
 -----------------------------------------------------------
@@ -364,8 +364,7 @@ Test all student functions
 DO NOT MODIFY THIS FUNCTION
 -----------------------------------------------------------
 */
-
-Future<void> driver() async {
+void driver() async {
   print("---- DART ASSIGNMENT DRIVER START ----");
 
   print("Calculator: ${calculate(10, 5, "+")}");
@@ -383,7 +382,7 @@ Future<void> driver() async {
   print("Student Role: ${displayRole(student)}");
   print("Professor Role: ${displayRole(professor)}");
 
-  await consumeFuture(fetchData("Data Loaded Successfully"));
+  //await consumeFuture(fetchData("Data Loaded Successfully"));
 
   print("---- DART ASSIGNMENT DRIVER END ----");
 }
@@ -395,5 +394,5 @@ RUN DRIVER
 */
 
 void main() async {
-  await driver();
+   driver();
 }
